@@ -12,14 +12,11 @@ router.get('/dashboard', (req, res) => {
 
 //@desc Adding new user
 //@route POST /adduser
-router.post('/adduser', actions.signup)
+router.post('/signup', actions.signup)
 
 //@desc Authenticate a user
 //@route POST /authenticate
-router.post('/authenticate', actions.signin)
+router.post('/signin', actions.signin)
 
-//@desc Get info on a user
-//@route GET /getinfo
-router.get('/getinfo', actions.getinfo)
 
 module.exports = router
