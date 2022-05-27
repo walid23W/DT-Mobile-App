@@ -100,7 +100,7 @@ class _fiche extends State<fiche>{
         state: StepState.disabled
       ),
       Step(
-          title: Text('Enter a bio'),
+          title: Text('Entrer une bio'),
           content: Column(
             children: <Widget> [
               TextFormField(
@@ -113,7 +113,7 @@ class _fiche extends State<fiche>{
           state: StepState.editing
       ),
       Step(
-          title: const Text("Describe"),
+          title: const Text("Décrivez"),
           content: Column(
             children: <Widget> [
               TextFormField(

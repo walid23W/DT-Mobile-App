@@ -1,5 +1,6 @@
 import 'package:ethnography/helpers/appcolors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'card.dart';
 import 'map.dart';
 
@@ -11,14 +12,6 @@ class ChoiceChipDisplay extends StatefulWidget {
 }
 
 class _ChoiceChipDisplayState extends State<ChoiceChipDisplay> {
-  List<String> chipList = [
-    "Recycled",
-    "Vegetarian",
-    "Skilled",
-    "Energetic",
-    "Friendly",
-    "Luxurious"
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -52,30 +45,39 @@ class _ChoiceChipDisplayState extends State<ChoiceChipDisplay> {
                           fontSize: 24.0,
                           fontWeight: FontWeight.bold),
                     ),
+
                   ),
                 ),
                 const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text(
-                    'Find the synonym of',
-                    style: TextStyle(color: Colors.black, fontSize: 18.0),
+                    'Aidez nous à voir plus clair',
+                    style: TextStyle(color: Colors.grey, fontSize: 15.0,fontWeight: FontWeight.bold),
                   ),
                 ),
-                const Padding(
+                 const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text(
-                    'Adroit',
+                    'Situez vos pensées / sentiments',
                     style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 42.0,
-                        fontWeight: FontWeight.w800),
+                        fontWeight: FontWeight.w800,
+                        fontSize: 25,
+                        color: Colors.black),
+                    textAlign: TextAlign.center ,
                   ),
                 ),
                 Wrap(
                   spacing: 5.0,
                   runSpacing: 5.0,
                   children: <Widget>[
-                    choiceChipWidget(chipList),
+                  filterchip1(name: 'Frustration'),
+                  filterchip1(name: 'Dépendance'),
+                  filterchip1(name: 'Ennui'),
+                  filterchip1(name: 'Reves inassouvis'),
+                  filterchip1(name: 'Incapacité'),
+                  filterchip1(name: 'Insécurité'),
+                  filterchip1(name: 'Peur'),
+                  filterchip1(name: 'Pression'),
                   ],
                 ),
                 Wrap(
@@ -134,48 +136,32 @@ class _ChoiceChipDisplayState extends State<ChoiceChipDisplay> {
   }
 }
 
-class choiceChipWidget extends StatefulWidget {
-  final List<String> reportList;
+class filterchip1 extends StatefulWidget {
 
-  choiceChipWidget(this.reportList);
+  final String name;
+
+  const filterchip1({Key? key, required this.name}) : super(key: key);
 
   @override
-  _choiceChipWidgetState createState() => new _choiceChipWidgetState();
+  _filterchip1 createState() => _filterchip1();
 }
+class _filterchip1 extends State<filterchip1>{
 
-class _choiceChipWidgetState extends State<choiceChipWidget> {
-  String selectedChoice = "";
-
-  _buildChoiceList() {
-    List<Widget> choices = [] ;
-    widget.reportList.forEach((item) {
-      choices.add(Container(
-        padding: const EdgeInsets.all(2.0),
-        child: ChoiceChip(
-          label: Text(item),
-          labelStyle: const TextStyle(
-              color: Colors.black, fontSize: 14.0, fontWeight: FontWeight.bold),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30.0),
-          ),
-          backgroundColor: Color(0xffededed),
-          selectedColor: AppColors.blue5,
-          selected: selectedChoice == item,
-          onSelected: (selected) {
-            setState(() {
-              selectedChoice = item;
-            });
-          },
-        ),
-      ));
-    });
-    return choices;
-  }
+  bool _isSelected = false;
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      children: _buildChoiceList(),
+    return FilterChip(
+      label: Text(widget.name),
+      labelStyle: const TextStyle(color: Colors.black,fontSize: 14,fontWeight: FontWeight.bold),
+      selected: _isSelected,
+      backgroundColor: Color(0xffededed),
+      onSelected: (isSelected) {
+        setState(() {
+          _isSelected = isSelected;
+        });
+      },
+      selectedColor: AppColors.blue5,
     );
   }
 }
@@ -190,14 +176,6 @@ class ChoiceChipDisplay2 extends StatefulWidget {
 }
 
 class _ChoiceChipDisplay2State extends State<ChoiceChipDisplay2> {
-  List<String> chipList = [
-    "Recycled",
-    "Vegetarian",
-    "Skilled",
-    "Energetic",
-    "Friendly",
-    "Luxurious"
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -236,25 +214,31 @@ class _ChoiceChipDisplay2State extends State<ChoiceChipDisplay2> {
                 const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text(
-                    'Find the synonym of',
-                    style: TextStyle(color: Colors.black, fontSize: 18.0),
+                    'Aidez nous à cerner votre comportement ',
+                    style: TextStyle(color: Colors.grey, fontSize: 15.0,fontWeight: FontWeight.bold),
                   ),
                 ),
                 const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text(
-                    'Adroit',
+                    'où vous situez vous ?',
                     style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 42.0,
-                        fontWeight: FontWeight.w800),
+                      fontWeight: FontWeight.w800,
+                      fontSize: 25,
+                      color: Colors.black),
+                  textAlign: TextAlign.center ,
                   ),
                 ),
                 Wrap(
                   spacing: 5.0,
                   runSpacing: 5.0,
                   children: <Widget>[
-                    choiceChipWidget(chipList),
+                    filterchip1(name: 'Agressif'),
+                    filterchip1(name: 'Esprit rebelle'),
+                    filterchip1(name: 'Trouillard'),
+                    filterchip1(name: 'Monotone'),
+                    filterchip1(name: 'Paresseux'),
+                    filterchip1(name: 'Problème de communication'),
                   ],
                 ),
                 Wrap(
@@ -313,54 +297,6 @@ class _ChoiceChipDisplay2State extends State<ChoiceChipDisplay2> {
   }
 }
 
-class choiceChipWidget2 extends StatefulWidget {
-  final List<String> reportList;
-
-  choiceChipWidget2(this.reportList);
-
-  @override
-  _choiceChipWidget2State createState() => new _choiceChipWidget2State();
-}
-
-class _choiceChipWidget2State extends State<choiceChipWidget2> {
-  String selectedChoice = "";
-
-  _buildChoiceList() {
-    List<Widget> choices = [] ;
-    widget.reportList.forEach((item) {
-      choices.add(Container(
-        padding: const EdgeInsets.all(2.0),
-        child: ChoiceChip(
-          label: Text(item),
-          labelStyle: const TextStyle(
-              color: Colors.black, fontSize: 14.0, fontWeight: FontWeight.bold),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30.0),
-          ),
-          backgroundColor: const Color(0xffededed),
-          selectedColor: AppColors.blue5,
-          selected: selectedChoice == item,
-          onSelected: (selected) {
-            setState(() {
-              selectedChoice = item;
-            });
-          },
-        ),
-      ));
-    });
-    return choices;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Wrap(
-      children: _buildChoiceList(),
-    );
-  }
-}
-
-
-
 /*------------------------------------------------*/
 
 class ChoiceChipDisplay3 extends StatefulWidget {
@@ -371,14 +307,6 @@ class ChoiceChipDisplay3 extends StatefulWidget {
 }
 
 class _ChoiceChipDisplay3State extends State<ChoiceChipDisplay3> {
-  List<String> chipList = [
-    "Recycled",
-    "Vegetarian",
-    "Skilled",
-    "Energetic",
-    "Friendly",
-    "Luxurious"
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -415,27 +343,35 @@ class _ChoiceChipDisplay3State extends State<ChoiceChipDisplay3> {
                   ),
                 ),
                 const Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(5.0),
                   child: Text(
-                    'Find the synonym of',
-                    style: TextStyle(color: Colors.black, fontSize: 18.0),
+                    'Aidez nous à identifier la nature de votre environnement',
+                    style: TextStyle(color: Colors.grey, fontSize: 15.0,fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
                   ),
                 ),
                 const Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(1.0),
                   child: Text(
-                    'Adroit',
+                    "Comment vous percevez l'entourage ?",
                     style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 42.0,
-                        fontWeight: FontWeight.w800),
+                        fontWeight: FontWeight.w800,
+                        fontSize: 22,
+                        color: Colors.black),
+                    textAlign: TextAlign.center ,
                   ),
                 ),
                 Wrap(
                   spacing: 5.0,
                   runSpacing: 5.0,
                   children: <Widget>[
-                    choiceChipWidget(chipList),
+                    filterchip1(name: 'Mensonges'),
+                    filterchip1(name: 'Exclusion sociale'),
+                    filterchip1(name: 'Jugement de valeur'),
+                    filterchip1(name: 'égocentrisme'),
+                    filterchip1(name: 'Espoir'),
+                    filterchip1(name: 'Pitié'),
+                    filterchip1(name: 'Censure'),
                   ],
                 ),
                 Wrap(
@@ -494,51 +430,6 @@ class _ChoiceChipDisplay3State extends State<ChoiceChipDisplay3> {
   }
 }
 
-class choiceChipWidget3 extends StatefulWidget {
-  final List<String> reportList;
-
-  choiceChipWidget3(this.reportList);
-
-  @override
-  _choiceChipWidget3State createState() => new _choiceChipWidget3State();
-}
-
-class _choiceChipWidget3State extends State<choiceChipWidget3> {
-  String selectedChoice = "";
-
-  _buildChoiceList() {
-    List<Widget> choices = [] ;
-    widget.reportList.forEach((item) {
-      choices.add(Container(
-        padding: const EdgeInsets.all(2.0),
-        child: ChoiceChip(
-          label: Text(item),
-          labelStyle: const TextStyle(
-              color: Colors.black, fontSize: 14.0, fontWeight: FontWeight.bold),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30.0),
-          ),
-          backgroundColor: Color(0xffededed),
-          selectedColor: AppColors.blue5,
-          selected: selectedChoice == item,
-          onSelected: (selected) {
-            setState(() {
-              selectedChoice = item;
-            });
-          },
-        ),
-      ));
-    });
-    return choices;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Wrap(
-      children: _buildChoiceList(),
-    );
-  }
-}
 
 /*----------------------------------------------------------------------------*/
 
@@ -550,14 +441,6 @@ class ChoiceChipDisplay4 extends StatefulWidget {
 }
 
 class _ChoiceChipDisplay4State extends State<ChoiceChipDisplay4> {
-  List<String> chipList = [
-    "Recycled",
-    "Vegetarian",
-    "Skilled",
-    "Energetic",
-    "Friendly",
-    "Luxurious"
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -596,25 +479,32 @@ class _ChoiceChipDisplay4State extends State<ChoiceChipDisplay4> {
                 const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text(
-                    'Find the synonym of',
-                    style: TextStyle(color: Colors.black, fontSize: 18.0),
+                    'Aidez nous à identifier vos réels besoins',
+                    style: TextStyle(color: Colors.grey, fontSize: 15.0,fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
                   ),
                 ),
                 const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text(
-                    'Adroit',
+                    "Allons'y",
                     style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 42.0,
-                        fontWeight: FontWeight.w800),
+                        fontWeight: FontWeight.w800,
+                        fontSize: 25,
+                        color: Colors.black),
+                    textAlign: TextAlign.center ,
                   ),
                 ),
                 Wrap(
                   spacing: 5.0,
                   runSpacing: 5.0,
                   children: <Widget>[
-                    choiceChipWidget(chipList),
+                    filterchip1(name: "Prise d'initiative"),
+                    filterchip1(name: 'Soutien'),
+                    filterchip1(name: 'Inclusion sociale'),
+                    filterchip1(name: 'Stimulation'),
+                    filterchip1(name: 'Education'),
+                    filterchip1(name: 'Financement'),
                   ],
                 ),
                 Wrap(
@@ -669,52 +559,6 @@ class _ChoiceChipDisplay4State extends State<ChoiceChipDisplay4> {
           ),
         ),
       ),
-    );
-  }
-}
-
-class choiceChipWidget4 extends StatefulWidget {
-  final List<String> reportList;
-
-  choiceChipWidget4(this.reportList);
-
-  @override
-  _choiceChipWidget4State createState() => new _choiceChipWidget4State();
-}
-
-class _choiceChipWidget4State extends State<choiceChipWidget4> {
-  String selectedChoice = "";
-
-  _buildChoiceList() {
-    List<Widget> choices = [] ;
-    widget.reportList.forEach((item) {
-      choices.add(Container(
-        padding: const EdgeInsets.all(2.0),
-        child: ChoiceChip(
-          label: Text(item),
-          labelStyle: const TextStyle(
-              color: Colors.black, fontSize: 14.0, fontWeight: FontWeight.bold),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30.0),
-          ),
-          backgroundColor: Color(0xffededed),
-          selectedColor: AppColors.blue5,
-          selected: selectedChoice == item,
-          onSelected: (selected) {
-            setState(() {
-              selectedChoice = item;
-            });
-          },
-        ),
-      ));
-    });
-    return choices;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Wrap(
-      children: _buildChoiceList(),
     );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:ethnography/user.dart';
+import 'package:ethnography/Services/authservice.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
@@ -14,7 +14,9 @@ class Signin extends StatefulWidget {
 }
 
 class _SigninState extends State<Signin> {
-  final _formKey = GlobalKey<FormState>();
+
+  var password,email,token;
+  /*final _formKey = GlobalKey<FormState>();
   Future save() async {
     var res = await http.post(Uri.parse("http://10.0.2.2:8080/signin"),
         headers: <String, String>{
@@ -24,11 +26,13 @@ class _SigninState extends State<Signin> {
           'email': user.email,
           'password': user.password
         });
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Persona()));
-  }
+    print(res.body);
+    if(res.body != null) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => Persona()));
+    }
+  }*/
 
-  User user = User('', '');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +41,7 @@ class _SigninState extends State<Signin> {
             Container(
               alignment: Alignment.center,
               child: Form(
-                key: _formKey,
+                //key: _formKey,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -58,9 +62,9 @@ class _SigninState extends State<Signin> {
                     Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: TextFormField(
-                        controller: TextEditingController(text: user.email),
+                        controller: TextEditingController(text: email),
                         onChanged: (value) {
-                          user.email = value;
+                          email = value;
                         },
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -96,9 +100,9 @@ class _SigninState extends State<Signin> {
                     Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: TextFormField(
-                        controller: TextEditingController(text: user.email),
+                        controller: TextEditingController(text: password),
                         onChanged: (value) {
-                          user.email = value;
+                          password = value;
                         },
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -137,11 +141,20 @@ class _SigninState extends State<Signin> {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(16.0)),
                             onPressed: () {
-                              if (_formKey.currentState!.validate()) {
+                              AuthService().login(email,password).then((val){
+                                  if(val.data['success']){
+                                    token = val.data['token'];
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => const Persona()));
+                                  }
+                              });
+                              /*if (_formKey.currentState!.validate()) {
                                 save();
                               } else {
                                 print("not ok");
-                              }
+                              }*/
                             },
                             child: const Text(
                               "Se connecter",
