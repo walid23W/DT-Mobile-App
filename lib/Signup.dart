@@ -2,7 +2,6 @@ import 'package:ethnography/Services/authservice.dart';
 import 'package:flutter/material.dart';
 import 'package:ethnography/signin.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:http/http.dart' as http;
 
 class Signup extends StatefulWidget {
 
@@ -12,21 +11,7 @@ class Signup extends StatefulWidget {
 
 class _SignupState extends State<Signup> {
 
-  var email,password,token;
-  /*final _formKey = GlobalKey<FormState>();
-  Future save() async {
-    var res = await http.post(Uri.parse("http://10.0.2.2:8080/signup"),
-        headers: <String, String>{
-          'Context-Type': 'application/json;charSet=UTF-8'
-        },
-        body: <String, String>{
-          'email': user.email,
-          'password': user.password
-        });
-    print(res.body);
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Signin()));
-  }*/
+  var email,password;
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +58,7 @@ class _SignupState extends State<Signup> {
                           }
                         },
                         decoration: InputDecoration(
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.email,
                               color: Colors.blue,
                             ),
@@ -141,11 +126,6 @@ class _SignupState extends State<Signup> {
                               MaterialPageRoute(
                               builder: (context) => Signin()))
                               });
-                              /*if (_formKey.currentState!.validate()) {
-                                save();
-                              } else {
-                                print("not ok");
-                              }*/
                             },
                             child: const Text(
                               "S'inscrire",

@@ -34,7 +34,7 @@ class _ChoiceChipDisplayState extends State<ChoiceChipDisplay> {
                   //color: new Color(0xffffc107),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12.0),
-                    color: AppColors.blue5,
+                    color: Colors.blue,
                   ),
                   child: const Align(
                     alignment: Alignment.center,
@@ -87,7 +87,7 @@ class _ChoiceChipDisplayState extends State<ChoiceChipDisplay> {
                  Padding(
                   padding: const EdgeInsets.only(top: 32.0),
                   child: RaisedButton(
-                      color: AppColors.blue5,
+                      color: Colors.blue,
                       child: const Text(
                         'Back',
                         style: TextStyle(
@@ -107,7 +107,7 @@ class _ChoiceChipDisplayState extends State<ChoiceChipDisplay> {
                    Padding(
                      padding: const EdgeInsets.only(top: 32.0),
                      child: RaisedButton(
-                         color: AppColors.blue5,
+                         color: Colors.blue,
                          child: const Text(
                            'Next',
                            style: TextStyle(
@@ -198,7 +198,7 @@ class _ChoiceChipDisplay2State extends State<ChoiceChipDisplay2> {
                   //color: new Color(0xffffc107),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12.0),
-                    color: AppColors.blue5,
+                    color: Colors.blue,
                   ),
                   child: const Align(
                     alignment: Alignment.center,
@@ -248,7 +248,7 @@ class _ChoiceChipDisplay2State extends State<ChoiceChipDisplay2> {
                       Padding(
                         padding: const EdgeInsets.only(top: 32.0),
                         child: RaisedButton(
-                            color: AppColors.blue5,
+                            color: Colors.blue,
                             child: const Text(
                               'Back',
                               style: TextStyle(
@@ -268,7 +268,7 @@ class _ChoiceChipDisplay2State extends State<ChoiceChipDisplay2> {
                       Padding(
                         padding: const EdgeInsets.only(top: 32.0),
                         child: RaisedButton(
-                            color: AppColors.blue5,
+                            color: Colors.blue,
                             child: const Text(
                               'Next',
                               style: TextStyle(
@@ -329,7 +329,7 @@ class _ChoiceChipDisplay3State extends State<ChoiceChipDisplay3> {
                   //color: new Color(0xffffc107),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12.0),
-                    color: AppColors.blue5,
+                    color: Colors.blue,
                   ),
                   child: const Align(
                     alignment: Alignment.center,
@@ -381,7 +381,7 @@ class _ChoiceChipDisplay3State extends State<ChoiceChipDisplay3> {
                       Padding(
                         padding: const EdgeInsets.only(top: 32.0),
                         child: RaisedButton(
-                            color: AppColors.blue5,
+                            color: Colors.blue,
                             child: const Text(
                               'Back',
                               style: TextStyle(
@@ -401,7 +401,7 @@ class _ChoiceChipDisplay3State extends State<ChoiceChipDisplay3> {
                       Padding(
                         padding: const EdgeInsets.only(top: 32.0),
                         child: RaisedButton(
-                            color: AppColors.blue5,
+                            color: Colors.blue,
                             child: const Text(
                               'Next',
                               style: TextStyle(
@@ -463,7 +463,7 @@ class _ChoiceChipDisplay4State extends State<ChoiceChipDisplay4> {
                   //color: new Color(0xffffc107),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12.0),
-                    color: AppColors.blue5,
+                    color: Colors.blue,
                   ),
                   child: const Align(
                     alignment: Alignment.center,
@@ -514,7 +514,7 @@ class _ChoiceChipDisplay4State extends State<ChoiceChipDisplay4> {
                       Padding(
                         padding: const EdgeInsets.only(top: 32.0),
                         child: RaisedButton(
-                            color: AppColors.blue5,
+                            color: Colors.blue,
                             child: const Text(
                               'Back',
                               style: TextStyle(
@@ -534,7 +534,7 @@ class _ChoiceChipDisplay4State extends State<ChoiceChipDisplay4> {
                       Padding(
                         padding: const EdgeInsets.only(top: 32.0),
                         child: RaisedButton(
-                            color: AppColors.blue5,
+                            color: Colors.blue,
                             child: const Text(
                               'Next',
                               style: TextStyle(

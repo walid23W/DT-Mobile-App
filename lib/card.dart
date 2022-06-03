@@ -16,7 +16,7 @@ class card extends StatelessWidget{
   Widget build(BuildContext context) {
     return(Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.blue5,
+        backgroundColor: Colors.blue,
         title: const Text("Empathy Card",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,fontStyle:FontStyle.italic)),
         centerTitle: true,
         leading: IconButton(
@@ -35,7 +35,7 @@ class card extends StatelessWidget{
           alignment: Alignment(0,-0.95),
           child : Text(
             "Ici s'exprime :",
-            style: TextStyle(color: AppColors.blue5,fontWeight: FontWeight.bold,fontSize: 30,fontStyle:FontStyle.italic),
+            style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold,fontSize: 30,fontStyle:FontStyle.italic),
           )),
           Align(
             alignment: const FractionalOffset(-1,0.8),

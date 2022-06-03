@@ -42,8 +42,8 @@ class questionCard extends StatelessWidget {
                             begin: Alignment.bottomCenter,
                             end: Alignment.topCenter,
                             colors: [
-                              AppColors.blue5.withOpacity(0.8),
-                              AppColors.blue5
+                              Colors.blue.withOpacity(0.8),
+                              Colors.blue
                             ]))),
               ),
               Positioned(

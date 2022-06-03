@@ -1,7 +1,9 @@
 import 'package:ethnography/Signin.dart';
+import 'package:ethnography/ViewResult.dart';
 import 'package:flutter/material.dart';
 import 'Persona.dart';
 import 'Signup.dart';
+import 'fiche.dart';
 
 
 void main() {

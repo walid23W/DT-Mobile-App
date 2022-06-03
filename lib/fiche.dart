@@ -1,18 +1,30 @@
 import 'package:ethnography/filterchip.dart';
 import 'package:ethnography/helpers/appcolors.dart';
 import 'package:flutter/material.dart';
+import 'Services/authservice.dart';
+import 'ViewResult.dart';
 import 'card.dart';
+import 'categorylist.dart';
 
 
 class fiche extends StatefulWidget {
 
+   fiche({Key? key, this.value2}) : super(key: key);
+  final value2;
   @override
-  _fiche createState() => _fiche();
+  _fiche createState() => _fiche(value2);
 }
 
 class _fiche extends State<fiche>{
 
   int _currentStep = 0;
+  var firstname,lastname,Profession,Age,mesfrustrations,bio,mesattentes;
+  List<String> infos = [];
+  var filter = [];
+  var value2;
+  var _list;
+  _fiche(this.value2);
+
   @override
   Widget build(BuildContext context) {
     return(
@@ -20,9 +32,16 @@ class _fiche extends State<fiche>{
           appBar: AppBar(
               title: const Text("Fiche Persona",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,fontStyle:FontStyle.italic)),
               centerTitle: true,
-            backgroundColor: AppColors.blue5,
-    ),
-          body: Stepper(
+            backgroundColor: Colors.blue,
+            leading: IconButton(
+               icon: const Icon(Icons.arrow_back_rounded),
+             onPressed: () {
+                  Navigator.push(
+                       context,
+                    MaterialPageRoute(
+                builder: (context) => categorylist()));}
+    ),),
+            body: Stepper(
             steps: _stepper(),
             physics: ClampingScrollPhysics(),
             currentStep: _currentStep,
@@ -41,7 +60,7 @@ class _fiche extends State<fiche>{
                       MaterialPageRoute(builder: (context) => card()));
                    }
                 }
-    );
+              );
             },
             onStepCancel: () {
               setState(() {
@@ -54,15 +73,33 @@ class _fiche extends State<fiche>{
               });
             },
           ),
-            floatingActionButton: FloatingActionButton(onPressed: () {
+            floatingActionButton: FloatingActionButton(onPressed: () async {
               if(_currentStep>=4) {
+               infos.add(value2[1]);
+              infos.add(firstname);
+              infos.add(lastname);
+              infos.add(bio);
+              infos.add(mesattentes);
+              infos.add(mesfrustrations);
+              infos.add(Profession);
+              infos.add(Age);
+                    }
+                   await AuthService().sendInfos(infos).then((val) => {
+                        print("Success1")
+                        });
+                   await AuthService().getinfos(value2[1]).then((val)=>
+              {
+                   _list = Map<String, dynamic>.from(val.data['infos']).values.toList(),
+                value2.add(_list),
+    });
               Navigator.push(
-                context,
-                MaterialPageRoute(
-                builder: (context) => card()));
-            };},
-             child: const Icon(Icons.arrow_forward_sharp),
-            )
+                   context,
+                   MaterialPageRoute(
+                   builder: (context) => ViewResult(token : value2[2]))
+                   );}
+                      ,
+              child: const Icon(Icons.arrow_forward_sharp),
+    )
       )
     );
   }
@@ -75,9 +112,29 @@ class _fiche extends State<fiche>{
           children: <Widget> [
             TextFormField(
               decoration: InputDecoration(labelText: 'First Name'),
+              controller: TextEditingController(text: firstname),
+              onChanged: (value) {
+                firstname = value;
+              },
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'Entrer des caractères';
+                }
+                return null;
+              },
          ),
           TextFormField(
         decoration: InputDecoration(labelText: 'Last Name'),
+            controller: TextEditingController(text: lastname),
+            onChanged: (value) {
+              lastname = value;
+            },
+            validator: (value) {
+              if (value!.isEmpty) {
+                return 'Entrer des caractères';
+              }
+              return null;
+            },
             )
           ],
         ),
@@ -90,9 +147,17 @@ class _fiche extends State<fiche>{
           children: <Widget> [
             TextFormField(
               decoration: InputDecoration(labelText: 'Profession'),
+              controller: TextEditingController(text: Profession),
+              onChanged: (value) {
+                Profession = value;
+              },
             ),
             TextFormField(
               decoration: InputDecoration(labelText: 'Age'),
+              controller: TextEditingController(text: Age),
+              onChanged: (value) {
+                Age = value;
+              },
             )
           ],
         ),
@@ -106,6 +171,16 @@ class _fiche extends State<fiche>{
               TextFormField(
                 decoration: const InputDecoration(labelText: 'Bio'),
                 maxLines: 3,
+                controller: TextEditingController(text: bio),
+                onChanged: (value) {
+                  bio = value;
+                },
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Entrer des caractères';
+                  }
+                  return null;
+                },
               ),
             ],
           ),
@@ -119,10 +194,30 @@ class _fiche extends State<fiche>{
               TextFormField(
                 decoration: const InputDecoration(labelText: 'Vos attentes'),
                 maxLines: 3,
+                controller: TextEditingController(text: mesattentes),
+                onChanged: (value) {
+                  mesattentes = value;
+                },
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Entrer des caractères';
+                  }
+                  return null;
+                },
               ),
               TextFormField(
                 decoration: const InputDecoration(labelText: 'Vos frustrations'),
                 maxLines: 3,
+                controller: TextEditingController(text: mesfrustrations),
+                onChanged: (value) {
+                  mesfrustrations = value;
+                },
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Entrer des caractères';
+                  }
+                  return null;
+                },
               )
             ],
           ),
@@ -130,7 +225,7 @@ class _fiche extends State<fiche>{
           state: StepState.indexed
       ),
       Step(
-          title: const Text("Situez votre personnalité"),
+          title: const Text("Situez la personnalité de votre cible"),
           content: Column(
             children: <Widget> [
               Container(

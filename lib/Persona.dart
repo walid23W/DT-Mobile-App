@@ -5,16 +5,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'fiche.dart';
 import  'package:ethnography/helpers/appcolors.dart';
 
-class Persona extends StatefulWidget {
+class Persona extends StatelessWidget {
 
-  const Persona({Key? key}) : super(key: key);
+  const Persona({Key? key, this.value}) : super(key: key);
 
-
-  @override
-  State<Persona> createState() => _Personastate();
-}
-
-class _Personastate extends State<Persona> {
+  final value;
 
   @override
   Widget build(BuildContext context) {
@@ -93,13 +88,13 @@ class _Personastate extends State<Persona> {
                           MaterialStateProperty.all<RoundedRectangleBorder>(
                               RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(18.0),
-                                  side: const BorderSide(color: AppColors.blue7))),
+                                  side: const BorderSide(color: Colors.blue))),
                         ),
                         onPressed: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => categorylist()),
+                                builder: (context) => categorylist(value1 : value)),
                           );
                         },
                       ),

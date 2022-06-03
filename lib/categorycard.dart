@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'categoryicon.dart';
 import 'models/category.dart';
 
 
@@ -53,9 +52,6 @@ class CategoryCard extends StatelessWidget {
                   padding: const EdgeInsets.all(10),
                   child: Row(
                     children: [
-                      CategoryIcon(
-                          color: category!.color,
-                          iconName: category!.icon),
                       const SizedBox(width: 10),
                       Text(category!.name,
                           style: const TextStyle(color: Colors.white, fontSize: 25))

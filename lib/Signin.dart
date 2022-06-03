@@ -1,7 +1,6 @@
 import 'package:ethnography/Services/authservice.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:http/http.dart' as http;
 import 'Persona.dart';
 import 'Signup.dart';
 
@@ -15,24 +14,8 @@ class Signin extends StatefulWidget {
 
 class _SigninState extends State<Signin> {
 
-  var password,email,token;
-  /*final _formKey = GlobalKey<FormState>();
-  Future save() async {
-    var res = await http.post(Uri.parse("http://10.0.2.2:8080/signin"),
-        headers: <String, String>{
-          'Context-Type': 'application/json;charSet=UTF-8'
-        },
-        body: <String, String>{
-          'email': user.email,
-          'password': user.password
-        });
-    print(res.body);
-    if(res.body != null) {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => Persona()));
-    }
-  }*/
-
+  var password,email,token,allo;
+  var tab =[];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +24,6 @@ class _SigninState extends State<Signin> {
             Container(
               alignment: Alignment.center,
               child: Form(
-                //key: _formKey,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -144,17 +126,17 @@ class _SigninState extends State<Signin> {
                               AuthService().login(email,password).then((val){
                                   if(val.data['success']){
                                     token = val.data['token'];
+                                    tab.add(token);
+                                    AuthService().getinfo(token).then((val){
+                                      allo = val.data['msg'];
+                                      tab.add(allo);
+                                    });
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => const Persona()));
+                                            builder: (context) =>  Persona(value : tab)));
                                   }
                               });
-                              /*if (_formKey.currentState!.validate()) {
-                                save();
-                              } else {
-                                print("not ok");
-                              }*/
                             },
                             child: const Text(
                               "Se connecter",

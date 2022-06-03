@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import '../models/category.dart';
 import '../models/question.dart';
 import 'appcolors.dart';
@@ -11,19 +13,16 @@ class utils {
         color: AppColors.blue7,
         name: "Fiche",
         imgName: "cat1",
-        icon: '    ',
       ),
       Category(
           color: AppColors.blue6,
-          name: "Empathy card",
+          name: "Carte d'empathie",
           imgName: "cat2",
-          icon: '    ',
       ),
       Category(
           color: AppColors.blue5,
           name: "Journey map",
           imgName: "cat3",
-          icon: '    ',
       ),
     ];
   }
@@ -31,19 +30,19 @@ class utils {
   static List<Question> get_questions() {
     return [
       Question(
-        color: AppColors.blue2,
+        color: Colors.blue,
         name: "Question 1"
       ),
       Question(
-          color: AppColors.blue1,
+          color: Colors.blue,
           name: "Question 2"
       ),
       Question(
-          color: AppColors.blue6,
+          color: Colors.blue,
           name: "Question 3"
       ),
       Question(
-          color: AppColors.blue6,
+          color: Colors.blue,
           name: "Question 4"
       )
     ];

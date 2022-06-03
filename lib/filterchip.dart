@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 class filterchip extends StatefulWidget {
 
-  final String name;
+   final String name;
 
-  const filterchip({Key? key, required this.name}) : super(key: key);
+   const filterchip({Key? key, required this.name,}) : super(key: key);
 
   @override
   _filterchip createState() => _filterchip();
