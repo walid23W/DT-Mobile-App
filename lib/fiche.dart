@@ -10,10 +10,10 @@ import 'categorylist.dart';
 class fiche extends StatefulWidget {
 
    fiche({Key? key, this.value2}) : super(key: key);
-  final value2;
-  @override
-  _fiche createState() => _fiche(value2);
-}
+   final value2;
+   @override
+   _fiche createState() => _fiche(value2);
+ }
 
 class _fiche extends State<fiche>{
 
@@ -226,7 +226,7 @@ class _fiche extends State<fiche>{
       ),
       Step(
           title: const Text("Situez la personnalité de votre cible"),
-          content: Column(
+          content:  Column(
             children: <Widget> [
               Container(
                 child: Wrap(

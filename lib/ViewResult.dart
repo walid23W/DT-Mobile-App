@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:ethnography/helpers/appcolors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -57,7 +56,7 @@ Future getImage() async {
             child : ListView(
              children: [
                const SizedBox(height: 50),
-               _image != null ? Image.file(_image!,width: 300,height: 300,fit: BoxFit.cover) : Image.asset('Images/persona.jpg',width: 10),
+               _image != null ? Image.file(_image!,width: 100,height: 100,fit: BoxFit.cover) : Image.asset('Images/persona.jpg',width: 10),
                IconButton(onPressed: getImage, icon: Icon(Icons.add_circle)),
                Padding(padding: EdgeInsets.only(top : 40,bottom: 15,right: 20,left: 40),
                  child :
@@ -70,7 +69,7 @@ Future getImage() async {
                  style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color : Colors.blue),
                  ),
                   Text(token[2],
-                    style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.blue),
+                    style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.black),
                   ),
              ],
         )),
@@ -85,7 +84,7 @@ Future getImage() async {
                          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color : Colors.blue),
                        ),
                        Text(token[3],
-                         style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.blue),
+                         style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.black),
                        ),
                      ],
                    )),
@@ -100,7 +99,7 @@ Future getImage() async {
                          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color : Colors.blue),
                        ),
                        Text(token[4],
-                         style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.blue),
+                         style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.black),
                        ),
                      ],
                    )),
@@ -115,7 +114,7 @@ Future getImage() async {
                          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color : Colors.blue),
                        ),
                        Text(token[5],
-                         style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.blue),
+                         style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.black),
                        ),
                      ],
                    )),
@@ -130,7 +129,7 @@ Future getImage() async {
                          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color : Colors.blue),
                        ),
                        Text(token[6],
-                         style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.blue),
+                         style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.black),
                        ),
                      ],
                    )),
@@ -145,7 +144,7 @@ Future getImage() async {
                          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color : Colors.blue),
                        ),
                        Text(token[7],
-                         style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.blue),
+                         style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.black),
                        ),
                      ],
                    )),
@@ -160,7 +159,7 @@ Future getImage() async {
                          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color : Colors.blue),
                        ),
                        Text(token[8],
-                         style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.blue),
+                         style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.black),
                        ),
                      ],
                    ))]))

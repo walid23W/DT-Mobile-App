@@ -5,6 +5,8 @@ class filterchip extends StatefulWidget {
 
    final String name;
 
+
+
    const filterchip({Key? key, required this.name,}) : super(key: key);
 
   @override
@@ -26,7 +28,7 @@ class filterchip extends StatefulWidget {
           _isSelected = isSelected;
         });
       },
-      selectedColor: AppColors.blue5,
+      selectedColor: AppColors.blue2,
     );
   }
   }

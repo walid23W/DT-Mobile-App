@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../models/category.dart';
 import '../models/question.dart';
 import 'appcolors.dart';
@@ -44,6 +43,38 @@ class utils {
       Question(
           color: Colors.blue,
           name: "Question 4"
+      )
+    ];
+  }
+  static List<Question> get_questions_map() {
+    return [
+      Question(
+          color: AppColors.blue2,
+          name: "Awarness 1"
+      ),
+      Question(
+          color: AppColors.blue1,
+          name: "Awarness 2"
+      ),
+      Question(
+          color: AppColors.blue6,
+          name: "Consideration 1"
+      ),
+      Question(
+          color: AppColors.blue6,
+          name: "Consideration 2"
+      ),
+      Question(
+          color: AppColors.blue6,
+          name: "Decision"
+      ),
+      Question(
+          color: AppColors.blue6,
+          name: "Service"
+      ),
+      Question(
+          color: AppColors.blue6,
+          name: "Loyalty"
       )
     ];
   }

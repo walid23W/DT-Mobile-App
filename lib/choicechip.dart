@@ -1,3 +1,4 @@
+import 'package:ethnography/categorylist.dart';
 import 'package:ethnography/helpers/appcolors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -559,6 +560,955 @@ class _ChoiceChipDisplay4State extends State<ChoiceChipDisplay4> {
           ),
         ),
       ),
+    );
+  }
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+class ChoiceChipDisplay_map extends StatefulWidget {
+  const ChoiceChipDisplay_map({Key? key}) : super(key: key);
+
+  @override
+  _ChoiceChipDisplaymap_state createState() => _ChoiceChipDisplaymap_state();
+}
+
+class _ChoiceChipDisplaymap_state extends State<ChoiceChipDisplay_map> {
+
+  List<String> chipList = [
+    "Online ad",
+    "Social Media Compaign",
+    "Through Friends"
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      body: Center(
+        child: Material(
+          color: Colors.white,
+          elevation: 14.0,
+          borderRadius: BorderRadius.circular(24.0),
+          shadowColor: const Color(0x802196F3),
+          child: Container(
+            width: 380,
+            height: 400,
+            child: Column(
+              children: <Widget>[
+                Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width,
+                  //color: new Color(0xffffc107),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12.0),
+                    color: AppColors.blue5,
+                  ),
+                  child: const Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Awarness 1',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 24.0,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    'How did you hear about us?',
+                    style: TextStyle(color: Colors.black, fontSize: 18.0 , fontWeight: FontWeight.bold),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    'Please check a box',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.normal),
+                  ),
+                ),
+                Wrap(
+                  spacing: 5.0,
+                  runSpacing: 5.0,
+                  children: <Widget>[
+                    choiceChipWidget(chipList),
+                  ],
+                ),
+                Wrap(
+                    spacing: 50.0,
+                    runSpacing: 5.0,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(top: 32.0),
+                        child: RaisedButton(
+                            color: AppColors.blue5,
+                            child: const Text(
+                              'Back',
+                              style: TextStyle(
+                                  color: Color(0xffffffff),
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => map()));
+                            },
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0))),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 32.0),
+                        child: RaisedButton(
+                            color: AppColors.blue5,
+                            child: const Text(
+                              'Next',
+                              style: TextStyle(
+                                  color: Color(0xffffffff),
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ChoiceChipDisplay_map2()));
+                            },
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0))),
+                      ),
+                    ]
+                ),
+
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+class ChoiceChipDisplay_map2 extends StatefulWidget {
+  const ChoiceChipDisplay_map2({Key? key}) : super(key: key);
+
+  @override
+  _ChoiceChipDisplaymap_state2 createState() => _ChoiceChipDisplaymap_state2();
+}
+
+class _ChoiceChipDisplaymap_state2 extends State<ChoiceChipDisplay_map2> {
+  List<String> chipList = [
+    "Hesitant","Hesitant Interested",
+    "Interested",
+    "Exited"
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      body: Center(
+        child: Material(
+          color: Colors.white,
+          elevation: 14.0,
+          borderRadius: BorderRadius.circular(24.0),
+          shadowColor: const Color(0x802196F3),
+          child: Container(
+            width: 380,
+            height: 400,
+            child: Column(
+              children: <Widget>[
+                Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width,
+                  //color: new Color(0xffffc107),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12.0),
+                    color: AppColors.blue5,
+                  ),
+                  child: const Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Awarness 2',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 24.0,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    'How did you initially feel about us?',
+                    style: TextStyle(color: Colors.black, fontSize: 18.0 , fontWeight: FontWeight.bold),
+
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    'Please check a box',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.normal),
+                  ),
+                ),
+                Wrap(
+                  spacing: 5.0,
+                  runSpacing: 5.0,
+                  children: <Widget>[
+                    choiceChipWidget(chipList),
+                  ],
+                ),
+                Wrap(
+                    spacing: 50.0,
+                    runSpacing: 5.0,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(top: 32.0),
+                        child: RaisedButton(
+                            color: AppColors.blue5,
+                            child: const Text(
+                              'Back',
+                              style: TextStyle(
+                                  color: Color(0xffffffff),
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => map()));
+                            },
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0))),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 32.0),
+                        child: RaisedButton(
+                            color: AppColors.blue5,
+                            child: const Text(
+                              'Next',
+                              style: TextStyle(
+                                  color: Color(0xffffffff),
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ChoiceChipDisplay_map3()));
+                            },
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0))),
+                      ),
+                    ]
+                ),
+
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+class ChoiceChipDisplay_map3 extends StatefulWidget {
+  const ChoiceChipDisplay_map3({Key? key}) : super(key: key);
+
+  @override
+  _ChoiceChipDisplaymap_state3 createState() => _ChoiceChipDisplaymap_state3();
+}
+
+class _ChoiceChipDisplaymap_state3 extends State<ChoiceChipDisplay_map3> {
+  List<String> chipList = [
+    "Asking previous clients",
+    "Website",
+    "Comparing prices and features to similar brands"
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      body: Center(
+        child: Material(
+          color: Colors.white,
+          elevation: 14.0,
+          borderRadius: BorderRadius.circular(24.0),
+          shadowColor: const Color(0x802196F3),
+          child: Container(
+            width: 380,
+            height: 400,
+            child: Column(
+              children: <Widget>[
+                Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width,
+                  //color: new Color(0xffffc107),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12.0),
+                    color: AppColors.blue5,
+                  ),
+                  child: const Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Consideration 1',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 24.0,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    'What made you consider using our services?',
+                    style: TextStyle(color: Colors.black, fontSize: 18.0 , fontWeight: FontWeight.bold),
+
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    'Please check a box',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.normal),
+                  ),
+                ),
+                Wrap(
+                  spacing: 5.0,
+                  runSpacing: 5.0,
+                  children: <Widget>[
+                    choiceChipWidget(chipList),
+                  ],
+                ),
+                Wrap(
+                    spacing: 50.0,
+                    runSpacing: 5.0,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(top: 32.0),
+                        child: RaisedButton(
+                            color: AppColors.blue5,
+                            child: const Text(
+                              'Back',
+                              style: TextStyle(
+                                  color: Color(0xffffffff),
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => map()));
+                            },
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0))),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 32.0),
+                        child: RaisedButton(
+                            color: AppColors.blue5,
+                            child: const Text(
+                              'Next',
+                              style: TextStyle(
+                                  color: Color(0xffffffff),
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ChoiceChipDisplay_map4()));
+                            },
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0))),
+                      ),
+                    ]
+                ),
+
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+class ChoiceChipDisplay_map4 extends StatefulWidget {
+  const ChoiceChipDisplay_map4({Key? key}) : super(key: key);
+
+  @override
+  _ChoiceChipDisplaymap_state4 createState() => _ChoiceChipDisplaymap_state4();
+}
+
+class _ChoiceChipDisplaymap_state4 extends State<ChoiceChipDisplay_map4> {
+  List<String> chipList = [
+    "Hesitant","Hesitant Interested",
+    "Interested",
+    "Exited"
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      body: Center(
+        child: Material(
+          color: Colors.white,
+          elevation: 14.0,
+          borderRadius: BorderRadius.circular(24.0),
+          shadowColor: const Color(0x802196F3),
+          child: Container(
+            width: 380,
+            height: 400,
+            child: Column(
+              children: <Widget>[
+                Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width,
+                  //color: new Color(0xffffc107),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12.0),
+                    color: AppColors.blue5,
+                  ),
+                  child: const Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Consideration 2',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 24.0,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    'How did you feel throughout this experience?',
+                    style: TextStyle(color: Colors.black, fontSize: 18.0 , fontWeight: FontWeight.bold),
+
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    'Please check a box',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.normal),
+                  ),
+                ),
+                Wrap(
+                  spacing: 5.0,
+                  runSpacing: 5.0,
+                  children: <Widget>[
+                    choiceChipWidget(chipList),
+                  ],
+                ),
+                Wrap(
+                    spacing: 50.0,
+                    runSpacing: 5.0,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(top: 32.0),
+                        child: RaisedButton(
+                            color: AppColors.blue5,
+                            child: const Text(
+                              'Back',
+                              style: TextStyle(
+                                  color: Color(0xffffffff),
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => map()));
+                            },
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0))),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 32.0),
+                        child: RaisedButton(
+                            color: AppColors.blue5,
+                            child: const Text(
+                              'Next',
+                              style: TextStyle(
+                                  color: Color(0xffffffff),
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ChoiceChipDisplay_map5()));
+                            },
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0))),
+                      ),
+                    ]
+                ),
+
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+class ChoiceChipDisplay_map5 extends StatefulWidget {
+  const ChoiceChipDisplay_map5({Key? key}) : super(key: key);
+
+  @override
+  _ChoiceChipDisplaymap_state5 createState() => _ChoiceChipDisplaymap_state5();
+}
+
+class _ChoiceChipDisplaymap_state5 extends State<ChoiceChipDisplay_map5> {
+  List<String> chipList = [
+    "Hesitant","Hesitant Interested",
+    "Interested",
+    "Exited"
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      body: Center(
+        child: Material(
+          color: Colors.white,
+          elevation: 14.0,
+          borderRadius: BorderRadius.circular(24.0),
+          shadowColor: const Color(0x802196F3),
+          child: Container(
+            width: 380,
+            height: 400,
+            child: Column(
+              children: <Widget>[
+                Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width,
+                  //color: new Color(0xffffc107),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12.0),
+                    color: AppColors.blue5,
+                  ),
+                  child: const Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Consideration 2',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 24.0,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    'How did you feel when buying the product?',
+                    style: TextStyle(color: Colors.black, fontSize: 18.0 , fontWeight: FontWeight.bold),
+
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    'Please check a box',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.normal),
+                  ),
+                ),
+                Wrap(
+                  spacing: 5.0,
+                  runSpacing: 5.0,
+                  children: <Widget>[
+                    choiceChipWidget(chipList),
+                  ],
+                ),
+                Wrap(
+                    spacing: 50.0,
+                    runSpacing: 5.0,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(top: 32.0),
+                        child: RaisedButton(
+                            color: AppColors.blue5,
+                            child: const Text(
+                              'Back',
+                              style: TextStyle(
+                                  color: Color(0xffffffff),
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => map()));
+                            },
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0))),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 32.0),
+                        child: RaisedButton(
+                            color: AppColors.blue5,
+                            child: const Text(
+                              'Next',
+                              style: TextStyle(
+                                  color: Color(0xffffffff),
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ChoiceChipDisplay_map6()));
+                            },
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0))),
+                      ),
+                    ]
+                ),
+
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+class ChoiceChipDisplay_map6 extends StatefulWidget {
+  const ChoiceChipDisplay_map6({Key? key}) : super(key: key);
+
+  @override
+  _ChoiceChipDisplaymap_state6 createState() => _ChoiceChipDisplaymap_state6();
+}
+
+class _ChoiceChipDisplaymap_state6 extends State<ChoiceChipDisplay_map6> {
+
+  List<String> chipList = [
+    "Awful","Frustrating",
+    "Decent",
+    "Good","Wonderful"
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      body: Center(
+        child: Material(
+          color: Colors.white,
+          elevation: 14.0,
+          borderRadius: BorderRadius.circular(24.0),
+          shadowColor: const Color(0x802196F3),
+          child: Container(
+            width: 380,
+            height: 400,
+            child: Column(
+              children: <Widget>[
+                Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width,
+                  //color: new Color(0xffffc107),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12.0),
+                    color: AppColors.blue5,
+                  ),
+                  child: const Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Consideration 2',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 24.0,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    'How did you find our service while and after buying the product?',
+                    style: TextStyle(color: Colors.black, fontSize: 18.0 , fontWeight: FontWeight.bold),
+
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    'Please check a box',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.normal),
+                  ),
+                ),
+                Wrap(
+                  spacing: 5.0,
+                  runSpacing: 5.0,
+                  children: <Widget>[
+                    choiceChipWidget(chipList),
+                  ],
+                ),
+                Wrap(
+                    spacing: 50.0,
+                    runSpacing: 5.0,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(top: 32.0),
+                        child: RaisedButton(
+                            color: AppColors.blue5,
+                            child: const Text(
+                              'Back',
+                              style: TextStyle(
+                                  color: Color(0xffffffff),
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => map()));
+                            },
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0))),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 32.0),
+                        child: RaisedButton(
+                            color: AppColors.blue5,
+                            child: const Text(
+                              'Next',
+                              style: TextStyle(
+                                  color: Color(0xffffffff),
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ChoiceChipDisplay_map7()));
+                            },
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0))),
+                      ),
+                    ]
+                ),
+
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+class ChoiceChipDisplay_map7 extends StatefulWidget {
+  const ChoiceChipDisplay_map7({Key? key}) : super(key: key);
+
+  @override
+  _ChoiceChipDisplaymap_state7 createState() => _ChoiceChipDisplaymap_state7();
+}
+
+class _ChoiceChipDisplaymap_state7 extends State<ChoiceChipDisplay_map7> {
+  List<String> chipList = [
+    "Yes","No"
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+        body: Center(
+         child: Material(
+           color: Colors.white,
+           elevation: 14.0,
+           borderRadius: BorderRadius.circular(24.0),
+           shadowColor: const Color(0x802196F3),
+           child: Container(
+              width: 380,
+              height: 400,
+              child: Column(
+                  children: <Widget>[
+                  Container(
+                    height: 50,
+                    width: MediaQuery.of(context).size.width,
+                    //color: new Color(0xffffc107),
+                    decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12.0),
+                     color: AppColors.blue5,
+                      ),
+                      child: const Align(
+                         alignment: Alignment.center,
+                         child: Text(
+                         'Consideration 2',
+                          style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 24.0,
+                          fontWeight: FontWeight.bold),
+                       ),
+                   ),
+                ),
+                  const Padding(
+                  padding: EdgeInsets.all(8.0),
+                     child: Text(
+                        'Are you considering making another purchase or recommending our service to other people?',
+                          style: TextStyle(color: Colors.black, fontSize: 18.0 , fontWeight: FontWeight.bold),
+                         ),
+                     ),
+                    const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                          'Please check a box',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.normal),
+                            ),
+                           ),
+                     Wrap(
+                      spacing: 5.0,
+                      runSpacing: 5.0,
+                      children: <Widget>[
+                        choiceChipWidget(chipList),
+                      ],
+                     ),
+                     Wrap(
+                      spacing: 50.0,
+                      runSpacing: 5.0,
+                      children: <Widget>[
+                        Padding(
+                           padding: const EdgeInsets.only(top: 32.0),
+                            child: RaisedButton(
+                              color: AppColors.blue5,
+                                child: const Text(
+                                'Back',
+                                     style: TextStyle(
+                                     color: Color(0xffffffff),
+                                     fontSize: 18.0,
+                                     fontWeight: FontWeight.bold),
+                                  ),
+                                  onPressed: () {
+                                      Navigator.push(
+                                             context,
+                                        MaterialPageRoute(
+                                    builder: (context) => map()));
+                                  },
+                                 shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30.0))),
+                               ),
+                           Padding(
+                             padding: const EdgeInsets.only(top: 32.0),
+                                  child: RaisedButton(
+                                    color: AppColors.blue5,
+                                      child: const Text(
+                                          'Next',
+                                              style: TextStyle(
+                                       color: Color(0xffffffff),
+                                     fontSize: 18.0,
+                                     fontWeight: FontWeight.bold),
+                                        ),
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                       MaterialPageRoute(
+                                           builder: (context) => categorylist()));
+                                       },
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30.0))),
+                                   ),
+                           ]
+                       ),
+
+                      ]
+
+
+                 )
+            )
+
+        )
+    )
+    );
+  }
+}
+
+/*----------------------------------------*/
+
+class choiceChipWidget extends StatefulWidget {
+  final List<String> reportList;
+
+  choiceChipWidget(this.reportList);
+
+  @override
+  _choiceChipWidgetState createState() => new _choiceChipWidgetState();
+}
+
+class _choiceChipWidgetState extends State<choiceChipWidget> {
+  String selectedChoice = "";
+
+  _buildChoiceList() {
+    List<Widget> choices = [] ;
+    widget.reportList.forEach((item) {
+      choices.add(Container(
+        padding: const EdgeInsets.all(2.0),
+        child: ChoiceChip(
+          label: Text(item),
+          labelStyle: const TextStyle(
+              color: Colors.black, fontSize: 14.0, fontWeight: FontWeight.bold),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+          ),
+          backgroundColor: Color(0xffededed),
+          selectedColor: AppColors.blue5,
+          selected: selectedChoice == item,
+          onSelected: (selected) {
+            setState(() {
+              selectedChoice = item;
+            });
+          },
+        ),
+      ));
+    });
+    return choices;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+      children: _buildChoiceList(),
     );
   }
 }

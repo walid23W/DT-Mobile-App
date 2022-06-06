@@ -1,6 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:ethnography/categorylist.dart';
-import 'package:ethnography/helpers/appcolors.dart';
 import 'package:flutter/material.dart';
 import 'choicechip.dart';
 import 'models/question.dart';
@@ -17,7 +16,7 @@ class card extends StatelessWidget{
     return(Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: const Text("Empathy Card",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,fontStyle:FontStyle.italic)),
+        title: const Text("Carte d'empathie",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,fontStyle:FontStyle.italic)),
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_rounded),
