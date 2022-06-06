@@ -1119,7 +1119,7 @@ class _ChoiceChipDisplaymap_state5 extends State<ChoiceChipDisplay_map5> {
                   child: const Align(
                     alignment: Alignment.center,
                     child: Text(
-                      'Consideration 2',
+                      'Decision',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 24.0,
@@ -1248,7 +1248,7 @@ class _ChoiceChipDisplaymap_state6 extends State<ChoiceChipDisplay_map6> {
                   child: const Align(
                     alignment: Alignment.center,
                     child: Text(
-                      'Consideration 2',
+                      'Service',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 24.0,
@@ -1374,7 +1374,7 @@ class _ChoiceChipDisplaymap_state7 extends State<ChoiceChipDisplay_map7> {
                       child: const Align(
                          alignment: Alignment.center,
                          child: Text(
-                         'Consideration 2',
+                         'loyalty',
                           style: TextStyle(
                           color: Colors.white,
                           fontSize: 24.0,
